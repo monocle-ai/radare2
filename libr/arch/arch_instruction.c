@@ -41,7 +41,6 @@ R_API void r_arch_instruction_init_data(RArchInstruction *ins, ut64 addr, const 
 	ins->addr = addr;
 	ins->size = size;
 	r_strbuf_init (&ins->esil);
-	//r_strbuf_setptr (&ins->data, (char*)buf, size);
 	r_strbuf_setbin (&ins->data, buf, size);
 }
 
@@ -56,7 +55,6 @@ R_API void r_arch_instruction_init_code(RArchInstruction *ins, ut64 addr, const 
 R_API void r_arch_instruction_set_bytes(RArchInstruction *ins, ut64 addr, const ut8 *buf, size_t size) {
 	ins->addr = addr;
 	ins->size = size;
-	//r_strbuf_setptr (&ins->data, (char*)buf, size);
 	r_strbuf_setbin (&ins->data, buf, size);
 }
 

@@ -136,8 +136,7 @@ R_API bool r_arch_session_encode_instruction (RArchSession *as, RArchInstruction
 R_API bool r_arch_session_decode_bytes (RArchSession *as, RArchInstruction *ins, ut64 addr, const ut8 *buf, size_t len) {
 	r_return_val_if_fail (as && ins, false);
 	if (buf) {
-		r_strbuf_setptr (&ins->data, (char *)buf, len);
-		// r_strbuf_setbin (&ins->data, (const ut8*)buf, len);
+		r_strbuf_setbin (&ins->data, (const ut8*)buf, len);
 	}
 	return r_arch_session_decode (as, ins, R_ARCH_OPTION_CODE);
 }
